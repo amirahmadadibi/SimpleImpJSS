@@ -2,6 +2,7 @@ package com.amirahmad.projects.testjobsdcaduler;
 
 import android.app.job.JobParameters;
 import android.app.job.JobService;
+import android.media.MediaPlayer;
 import android.util.Log;
 
 /**
@@ -15,6 +16,9 @@ public class MyJobService extends JobService {
         //write your code here
 
         Log.d("codeRunner", "onStartJob: "+params.getJobId());
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.mornning_alarm);
+        mediaPlayer.start();
         //when your job is complete
         jobFinished(params,false);
 
